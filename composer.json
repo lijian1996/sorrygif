@@ -1,0 +1,21 @@
+{
+  "name": "sorry-php",
+  "description": "php版为所欲为",
+  "type": "project",
+  "require": {
+    "php": ">=7.1.0",
+    "php-ffmpeg/php-ffmpeg": "^0.11.1",
+    "nikic/fast-route": "^1.3",
+    "twig/twig": "^2.4"
+  },
+  "autoload": {
+    "classmap": [
+
+
+    ],
+    "psr-4": {
+      "Sorry\\": "src/",
+      "App\\":"application/"
+    }
+  }
+}

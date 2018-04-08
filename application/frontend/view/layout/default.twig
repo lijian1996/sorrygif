@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    {% include 'common/meta.twig' %}
+</head>
+<style>
+    html,
+    body {
+        overflow-x: hidden; /* Prevent scroll on narrow devices */
+    }
+
+    body {
+        padding-top: 56px;
+    }
+
+    @media (max-width: 767.98px) {
+        .offcanvas-collapse {
+            position: fixed;
+            top: 56px; /* Height of navbar */
+            bottom: 0;
+            width: 100%;
+            padding-right: 1rem;
+            padding-left: 1rem;
+            overflow-y: auto;
+            background-color: var(--gray-dark);
+            transition: -webkit-transform .3s ease-in-out;
+            transition: transform .3s ease-in-out;
+            transition: transform .3s ease-in-out, -webkit-transform .3s ease-in-out;
+            -webkit-transform: translateX(100%);
+            transform: translateX(100%);
+        }
+        .offcanvas-collapse.open {
+            -webkit-transform: translateX(-1rem);
+            transform: translateX(-1rem); /* Account for horizontal padding on navbar */
+        }
+    }
+
+
+
+
+</style>
+<body class="bg-light">
+
+    <nav class="navbar navbar-expand-md fixed-top navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">在线生成gif动图</a>
+        <button class="navbar-toggler p-0 border-0" type="button" data-toggle="offcanvas">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="navbar-collapse offcanvas-collapse" id="navbarsExampleDefault">
+            <ul class="navbar-nav mr-auto">
+                {% for key,value in menu %}
+                <li class="nav-item ">
+                    <a class="nav-link {% if template == key %}active{% endif %}" href="/{{ key }}">{{ value.name }} </a>
+                </li>
+                {% endfor %}
+
+            </ul>
+
+        </div>
+    </nav>
+
+
+    <main role="main" class="container">
+        {% include __CONTENT__ %}
+    </main>
+
+
+
+
+
+</body>
+{% include 'common/script.twig' %}
+</html>

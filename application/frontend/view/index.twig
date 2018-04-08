@@ -1,0 +1,40 @@
+<style>
+    .top { margin-top: 10px; }
+
+</style>
+<div class="row ">
+    <div class="col-xl-6 col-md-8 top" >
+        <div class="card mb-8 box-shadow">
+            <img class="card-img-top" src=" {{  data.imageDir }}" data-holder-rendered="true">
+        </div>
+        <h2 class="text-dark top">在线生成{{ data.name }},动图</h2>
+    </div>
+</div>
+<div class="row ">
+    <div class="col-xl-6 col-md-8 top" >
+        <form class="needs-validation"  novalidate="" onsubmit="return false">
+
+            {% for num,sub in data.subtitles %}
+                <div class="mb-2">
+                    <label for="email" class="text-info " ><strong>第 {{num+1}}句</strong> </label>
+                    <input type="text" name="subtitle[]" class="form-control"  placeholder="{{ sub }}">
+
+                </div>
+            {% endfor %}
+
+            <div class="custom-control custom-checkbox">
+                <input type="checkbox" name="small" class="custom-control-input" value="1" id="small" >
+                <label class="custom-control-label" for="small">生成小图</label>
+            </div>
+            <hr class="mb-3">
+            <a id="gif-url" target="_blank" href="#"  hidden>下载</a>
+
+            <div class="mb-3 top">
+            <button id="create-gif" class="btn btn-primary "   type="submit">生成</button>
+            </div>
+        </form>
+    </div>
+
+</div>
+
+
