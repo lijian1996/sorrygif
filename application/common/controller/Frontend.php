@@ -43,7 +43,7 @@ class Frontend extends Controller
   }
 
   protected function setTitle(string $title){
-      return $this->view->assign('title',$title);
+     return $this->view->assign('title',$title);
   }
     public function __destruct()
     {

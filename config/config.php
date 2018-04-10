@@ -11,7 +11,7 @@ return [
 
     'default_filter' => '',
 
-    'debug'=>true,  //调试模式
+    'debug'=>false,  //调试模式
 
     'site' => [
         'version'=>'0.0.1', //版本号
