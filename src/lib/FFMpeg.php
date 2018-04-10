@@ -40,7 +40,7 @@ class FFMpeg
             }
         }
         if(!$this->config){
-            $this->config=Config::get('FFMpeg.config');
+            $this->config=Config::get('ffmpeg.config');
         }
       $this->FFMpeg =   \FFMpeg\FFMpeg::create($this->config,$this->logger,$this->probe);
     }

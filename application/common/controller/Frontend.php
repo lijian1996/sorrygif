@@ -9,7 +9,7 @@
 namespace App\common\controller;
 use App\common\service\Template;
 use Sorry\config\Config;
-use Sorry\controller\controller;
+use Sorry\controller\Controller;
 use Sorry\lib\Request;
 
 class Frontend extends Controller

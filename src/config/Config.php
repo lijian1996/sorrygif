@@ -43,7 +43,7 @@ class Config
     {
         $ext = $ext ? $ext : CONF_EXT;
         $name = explode('.', $name);
-        $name[0] = strtolower($name[0]);
+        $name[0] = strtolower ($name[0]);
         $file = CONF_PATH . $name[0] . $ext;;
         if (!isset(self::$config[$name[0]])) {
             is_file($file) && self::load($file, $name[0]);
